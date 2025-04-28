@@ -1,7 +1,7 @@
 <?php include('inc_header.php');
 if( isset($_GET['iditem']) && isset($_GET['action']) ) {
     // $iditem = $_GET['iditem'];
-    $iditem = trim($_GET['iditem']);
+    $iditem = trim($_GET['iditem']); //updated version from above line
     $action = $_GET['action'];
     if($action == 'add'){
         $sql = "SELECT * FROM item WHERE iditem = $iditem AND status_item!='habis'";
@@ -44,11 +44,11 @@ if( isset($_GET['iditem']) && isset($_GET['action']) ) {
                 while($row = mysqli_fetch_array($result) ) {
 
                     // $iditem = $row['iditem'];
-                    $iditem = trim($row['iditem']);
+                    $iditem = trim($row['iditem']); //updated version from above
                     $namaitem = $row['namaitem'];
                     $harga = $row['harga'];
                     // $kuantiti = $cart[$row['iditem']];
-                    $kuantiti = isset($cart[$iditem]) ? $cart[$iditem] : 0;
+                    $kuantiti = isset($cart[$iditem]) ? $cart[$iditem] : 0; //updated version from above
 
                     $item_total = $harga * $kuantiti;
                     $subtotal += $item_total;
