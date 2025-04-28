@@ -1,0 +1,3 @@
+Ini adalah Starter Kit untuk membina Portal SPP : Sistem Pengurusan Pesanan
+Rujuk buku modul dan web sokongan modul untuk rujukan lanjut. 
+https://sk.jomgeek.com/sk2425
