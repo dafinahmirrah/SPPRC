@@ -23,7 +23,7 @@ body{
     background-repeat: no-repeat; 
     background-size: cover;
     padding: 15px 0px 15px 0px;
-    background-image: url('images/bg.jpg');
+    background-image: url('images/pic.jpg');
     background-color: #7dffcc;
 }
 

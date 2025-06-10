@@ -12,7 +12,7 @@ if(isset($_POST['search'])){
     if(isset($_POST['susunan'])){
         $susunan = $_POST['susunan'];
         if($susunan == 'menaik'){
-            $order_by='jumlahpesanan ASC';
+            $order_by= 'jumlahpesanan ASC';
         }elseif($susunan == 'menurun'){
             $order_by = 'jumlahpesanan DESC';
         }
@@ -39,18 +39,18 @@ if(isset($_POST['search'])){
 </div>
 
 <div class="col text-end"> 
-    <a class='btn btn-primary' href='admin_pengguna_borang.php">Tambah Pengguna Baru</a>
+    <a class='btn btn-primary' href="admin_pengguna_borang.php">Tambah Pengguna Baru</a>
 </div>
 </div>
 </form>
 <hr>
 <?php
-$sql ="SELECT p.*, COUNT(pe.idpengguna) as jumlahpesanan FROM pengguna p
+$sql = "SELECT p.*, COUNT(pe.idpengguna) as jumlahpesanan FROM pengguna p
 LEFT JOIN pesanan pe ON p.idpengguna = pe.idpengguna
 $q
 GROUP BY idpengguna ORDER BY $order_by";
 
-$result = query ($db, $sql);
+$result = query($db, $sql);
 $total = mysqli_num_rows($result);
 if($total > 0){
     echo "Jumlah: $total<br>";
@@ -58,12 +58,12 @@ if($total > 0){
 
     <table class='table table-striped table-sm' border='1' cellpadding='4' cellspacing='0'>
         <tr> 
-            <th>Bil.</th><th>Username</th><th>Nama Pengguna</th><th>No HP</th>
-            <th>Email</th><th>Jumlah Pesanan</th> <th class='text-right'>Tindakan</th>
+            <th>Bil.</th> <th>Username</th> <th>Nama Pengguna</th> <th>No HP</th>
+            <th>Email</th> <th>Jumlah Pesanan</th> <th class='text-right'>Tindakan</th>
 </tr>
 <?php
 $counter = 0;
-while($row = mysqli_fetch_array($result)){
+while($row = mysqli_fetch_array($result) ) {
 
     $counter +=1;
     $idpengguna = $row['idpengguna'];
@@ -78,9 +78,9 @@ while($row = mysqli_fetch_array($result)){
     <td align='center'>$jumlahpesanan</td>
     <td align='right'>
     <a class='btn btn-sm btn-info' href='akaun.php?idpengguna=$idpengguna'>Laporan</a>
-    <a class='btn btn-sm btn-info' href='admin_pengguna_borang.php?idpengguna=$idpengguna'>
+    <a class='btn btn-sm btn-info' href='admin_pengguna_borang.php?idpengguna=$idpengguna'  >
     Edit</a>
-    </td></tr>";
+    </td> </tr>";
 }
 ?>
 </table>

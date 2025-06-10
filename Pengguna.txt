@@ -1,0 +1,3 @@
+ahmad, abc123, Ahmad Jalani, 011234444, ahmad@gmail.com
+sarah, mypassword, Siti Sarah, 01234567
+kim, 123456, Peter Kim
